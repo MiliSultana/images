@@ -395,7 +395,7 @@ $banner_video = get_field('banner_video');
                   <h3 class="text-[32px] font-instrument-serif leading-[38px]">Build <br>Community</h3>
                   <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
                     It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
+                    shopper, grew tired of guesswor.
                   </p>
                 </div>
               </div>
