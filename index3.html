@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEVORA</title>
+
+
+
+  <link href="./output.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+</head>
+
+
+
+
+<body class="bg-[#121212] text-white  ">
+
+  <!-- HEADER / NAVIGATION -->
+
+
+ <header class="sticky top-0  bg-[#121212]  z-10 border-b border-[#242424]">
+  <nav class="container mx-auto flex items-center justify-between  sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[160px] h-[50px] md:h-[100px] relative">
+
+    <!-- Left: Logo -->
+    <div>
+      <img src="images/SEVORA Logo.png" alt="SEVORA Logo" class="w-[130px] h-[30px] md:w-[215px] md:h-[48px]" />
+    </div>
+
+    <!-- Middle: Navigation Links -->
+   <ul id="menu" class="hidden lg:flex flex-col lg:flex-row gap-6 text-[13px] 2xl:ml-[-280px] font-instrument-sans 
+  absolute lg:static top-[80px] right-20 w-[30%] sm:w-[20%] md:w-[15%] lg:w-auto 
+  bg-[#121212]/85 lg:bg-transparent leading-[40px] p-5 lg:p-0 z-40">
+
+        <li><a href="index.html" class="relative text-white font-medium group">ABOUT US
+            <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li><a href="index2.html" class="relative text-white font-medium group">OUR TEAMS
+          <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li><a href="index3.html" class="relative text-white font-medium group">CAREERS
+            <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a>
+        </li>
+        <li><a href="index4.html" class="relative text-white font-medium group">BLOG
+            <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a></li>
+        <li><a href="#" class="relative text-white font-medium group">NEWS
+            <span class="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full"></span>
+          </a></li>
+      </ul>
+
+    <!-- Right: Toggle + Back to Home -->
+    <div class="flex items-center gap-4">
+      <!-- Menu Toggle (only on mobile) -->
+      <button id="menu-toggle" class="block lg:hidden text-white focus:outline-none">
+        <!-- Hamburger Icon -->
+        <svg id="hamburger" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon -->
+        <svg id="close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+      <!-- Back to Home Button (always visible) -->
+      <div class="">
+        <a href="index.html" class="inline-flex items-center font-instrument-sans font-medium text-center md:py-[13px] md:px-[26px] py-[3px] px-[3px]
+            bg-[#242424] text-white border border-[#2E2E2E] hover:bg-[#555] text-[12px] md:text-[13px] transition gap-2">
+            <img src="images/ArrowLeft.png" alt="Back Arrow" class="w-4 h-4" />
+            <span>BACK TO HOME</span>
+          </a>
+      </div>
+    </div>
+  </nav>
+</header>
+  
+
+  <section class="w-full  bg-[#121212]">
+    <div class="container bg-[#121212] mx-auto  pb-[85px] md:mt-0">
+
+      <div class="flex flex-wrap items-center h-auto md:h-auto   md:py-0  relative z-0">
+        <!-- Background Image on Right -->
+        <div class="hidden md:block absolute top-[-60px] right-[24%] w-1/2 h-full z-10">
+          <img src="images/Vector2.png" alt="Right side" class="w-full " />
+        </div>
+
+        <!-- Blur Glow Effect -->
+        <div class="absolute 
+         md:top-[-293px] 
+         md:left-[200px] lg:left-[550px]
+          md:w-[400px] 
+         md:h-[300px] 
+         bg-white/80 rounded-full blur-[200px] z-10">
+        </div>
+
+        <div
+          class=" md:px-[50px] xl:px-[100px] 2xl:px-[148px]  flex flex-wrap items-center justify-center pb-[20px] h-auto md:py-0">
+
+
+          <!-- LEFT TEXT -->
+          <div class="z-10  w-full md:w-1/2  md:mb-0 lg:pr-[48px] xl:px-0 2xl:px-0 lg:mt-[50px] xl:mt-[50px] 2xl:mt-[95px] text-center md:text-left">
+            <h1
+              class="not-visited:lg:text-left text-[40px] md:text-[49px] md:leading-[60px] lg:text-[50px] xl:text-[70px] 2xl:text-[80px] font-instrument-serif font-normal lg:leading-[60px] xl:leading-[88px]">
+              Join the company <br> with the bold<span class="text-[#737378]"> new <br> vision.</span>
+            </h1>
+
+          </div>
+
+          <!-- RIGHT text -->
+          <div class="w-full md:w-1/2 relative text-center  flex justify-end items-center overflow-hidden  md:h-full">
+
+
+            <!-- p -->
+            <div class="relative z-10 lg:mt-[50px] xl:mt-[110px] 2xl:mt-[140px] mt-0 md:mt-[50px] items-center justify-center ">
+              <p
+                class="px-[20px] md:px-0 md:ml-[111px] lg:ml-0 xl:ml-[80px] font-[400]  leading-[25.2px] tracking-[1px] md:text-left not-visited:lg:text-left 2xl:text-[18px] md:text-[14px]  lg:text-[15px] ml-0 font-instrument-sans">
+                At Sevora, we’re shaping the e-commerce industry. Join us to solve AI’s toughest
+                challenges, building systems that see, hear, and understand like humans—unlocking new
+                ways to communicate and create.
+
+
+
+              <div class="w-[217px] h-[42px] mt-6 mx-auto md:mt-[23px] xl:ml-[80px] md:ml-[111px] lg:ml-0">
+                <a href="#" class="inline-flex items-center font-instrument-sans font-medium text-center py-[13px] px-[26px]
+      bg-white text-black border border-[#2E2E2E] hover:bg-[#555] text-[13px] transition gap-[8px]">
+                  <span>SEE OPEN POSITIONS</span>
+                  <img src="images/ArrowRight2.png" alt="Arrow Right" class="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+
+  <section class="w-full max-w-[1440px] mx-auto overflow-hidden bg-[#121212]">
+    <div class="relative w-full pb-[100px]">
+      <!-- Add items-start to align top -->
+      <div class="flex items-start whitespace-nowrap w-max marquee-track gap-[40px]">
+        <!-- 1st image set -->
+        <img src="images/Frame 2708.png" alt="Image 1" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2709.png" alt="Image 2" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2710.png" alt="Image 3" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2711.png" alt="Image 4" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2712.png" alt="Image 5" class="h-auto  object-contain flex-shrink-0" />
+
+        <!-- 2nd image set -->
+        <img src="images/Frame 2708.png" alt="Image 1" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2709.png" alt="Image 2" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2710.png" alt="Image 3" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2711.png" alt="Image 4" class="h-auto  object-contain flex-shrink-0" />
+        <img src="images/Frame 2712.png" alt="Image 5" class="h-auto  object-contain flex-shrink-0" />
+      </div>
+    </div>
+  </section>
+
+
+  <section class="w-full pb-0 md:pb-[100px]  bg-[#F5F3ED]">
+    <div class="container h-[500px] md:h-[678px]   px-[20px] sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[148px] bg-[#F5F3ED] mx-auto   md:mt-0">
+      <h2
+        class="text-[32px] font-instrument-serif md:text-[52px] pt-[35px] md:pt-[100px] text-center mx-auto text-black font-medium  mb-[40px] ">
+        <span class="text-gray-500 font-regular">Why</span> join sevora
+      </h2>
+
+      <div class="scroller ">
+
+
+        <section class="black gap-[30px] md:gap-[83px] ">
+          <!-- Left side image panels -->
+          <div class="p-wrap ">
+            <div class="panel blue"><img src="images/Frame 2708.png" alt=""></div>
+            <div class="panel red"><img src="images/Frame 2712.png" alt=""></div>
+            <div class="panel orange"><img src="images/Frame 2710.png" alt=""></div>
+            <div class="panel purple"><img src="images/Frame 2711.png" alt=""></div>
+          </div>
+
+          <!-- Right side text panels -->
+          <div class="text-wrap ">
+            <div class="panel-text flex flex-col  items-start text-left">
+              <h1 class="mb-[16px] sm:text-[29px] md:text-[38px] lg:text-[40px] text-[#121212] font-400 font-instrument-serif">
+                1. Fueled by curiosity.
+              </h1>
+              <p class="text-[12px] md:text-[16px] font-400 font-instrument-sans  text-[#424245]">
+                Immerse yourself in an environment brimming with creativity and curiosity. Each day is a
+                chance to learn, challenge convention, and pioneer new AI research.
+              </p>
+            </div>
+            <div class="panel-text flex flex-col  items-start text-left">
+              <h1 class="mb-4 sm:text-[29px] md:text-[38px] lg:text-[40px] text-[#121212] font-400 font-instrument-serif">
+                2. Fueled by curiosity.
+              </h1>
+              <p class="text-[12px] md:text-[16px] font-400 font-instrument-sans text-[#424245]">
+                Immerse yourself in an environment brimming with creativity and curiosity. Each day is a
+                chance to learn, challenge convention, and pioneer new AI research.
+              </p>
+            </div>
+
+            <div class="panel-text flex flex-col  items-start text-left">
+              <h1 class="mb-4 sm:text-[29px] md:text-[38px] lg:text-[40px] text-[#121212] font-400 font-instrument-serif">
+                3. Fueled by curiosity.
+              </h1>
+              <p class="text-[12px] md:text-[16px] font-400 font-instrument-sans text-[#424245]">
+                Immerse yourself in an environment brimming with creativity and curiosity. Each day is a
+                chance to learn, challenge convention, and pioneer new AI research.
+              </p>
+            </div>
+
+            <div class="panel-text flex flex-col  items-start text-left">
+              <h1 class="mb-4 sm:text-[29px] md:text-[38px] lg:text-[40px] text-[#121212] font-400 font-instrument-serif">
+                4. Fueled by curiosity.
+              </h1>
+              <p class="text-[12px] md:text-[16px] font-400 font-instrument-sans text-[#424245]">
+                Immerse yourself in an environment brimming with creativity and curiosity. Each day is a
+                chance to learn, challenge convention, and pioneer new AI research.
+              </p>
+            </div>
+
+          </div>
+        </section>
+
+      </div>
+
+      <!-- GSAP + Plugins -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js"></script>
+      <script src="script.js"></script>
+
+
+    </div>
+
+  </section>
+
+
+  <div class=" bg-[#121212]">
+    <section class="relative w-full mx-auto sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[160px] py-[35px] md:py-[100px] bg-[#121212]  overflow-hidden">
+
+      <!-- Background Images Inside Container -->
+      <div class="hidden md:block absolute top-0 right-0  ">
+        <img src="images/RightVector.png" alt="Right side" class="w-[400px] h-[400px] " />
+      </div>
+
+      <div
+        class="absolute   top-[-320px] items-end right-[-320px]   w-[600px] h-[600px] bg-[#666666] opacity-[30%] rounded-full blur-[200px] z-10">
+      </div>
+
+      <div class="hidden md:block absolute left-0 bottom-0 ">
+        <img src="images/LeftVector.png" alt="left side" class="w-[400px] h-[400px] " />
+      </div>
+      <div
+        class="absolute   top-[230px] left-[-320px]   w-[600px] h-[600px] bg-[#666666] opacity-[30%] rounded-full blur-[200px] z-10">
+      </div>
+      <!-- Content -->
+      <section class="container mx-auto bg-[#121212] text-white">
+        <div class="max-w-[1240px] mx-auto text-center mb-[40px] px-4 md:px-0">
+          <h2
+            class="text-[32px] font-instrument-serif md:text-[52px]  text-center mx-auto text-white font-medium  mb-[40px] ">
+            Our<span class="text-[#737378] font-regular"> Values</span>
+          </h2>
+
+        </div>
+
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-[40px] px-[20px] sm:px-0">
+          <!-- Card 1 -->
+          <div
+            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
+            <div class="p-[24px] md:p-[32px]">
+              <div class="flex items-center gap-[12px] mb-[16px]">
+                <img src="images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
+                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">IMPATIENCE</h3>
+              </div>
+              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
+                The Future Won’t Get Here Fast Enough Unless We Force It. We Value Speed, Intensity, And Bias Towards
+                Action.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div
+            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
+            <div class="p-[24px] md:p-[32px]">
+              <div class="flex items-center gap-[12px] mb-[16px]">
+                <img src="images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
+                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">COURAGE</h3>
+              </div>
+              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
+                Doing Big Things Is Not For The Faint-Hearted! We’re Willing To Be Decisive And Take Risks—Inertia Is
+                The Enemy.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div
+            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424] ">
+            <div class="p-[24px] md:p-[32px]">
+              <div class="flex items-center gap-[12px] mb-[16px]">
+                <img src="images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
+                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">EXCELLENCE</h3>
+              </div>
+              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
+                Our Standards For Each Other Are “Insanely Great”. We Care Deeply About Our Craft, And Are Unapologetic
+                About Demanding Great.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div
+            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
+            <div class="p-[24px] md:p-[32px]">
+              <div class="flex items-center gap-[12px] mb-[16px]">
+                <img src="images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
+                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">KEEP IT LEAN</h3>
+              </div>
+              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
+                We’re Lean, Scrappy, And Prioritize Results Over Process—We’re Default Suspicious Of Things That Look
+                Like BS.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+
+
+
+  <section class="bg-[#F5F3ED] py-[35px] md:py-[100px] text-[#121212]">
+    <div class="container mx-auto  text-center mb-0 md:mb-[40px]  md:px-0">
+      <h2
+        class="text-[32px] font-instrument-serif md:text-[52px]  text-center mx-auto text-[#121212] font-medium  ">
+        Our<span class="text-[#737378] font-regular"> Perks & Benefits</span>
+      </h2>
+
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 sm:gap-0 md:gap-[40px] container mx-auto sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[260px] ">
+      <!-- Card 1 -->
+      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
+        <div class="p-[24px] ">
+          <div class="flex flex-col  items-start gap-[12px] mb-[16px]">
+            <img src="images/CurrencyInr.png" alt="rectangle"
+              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5]  object-contain" />
+            <h3 class="font-medium font-instrument-sans text-[24px] ">Competitive compensation</h3>
+          </div>
+          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
+            Getting paid a good salary certainly doesn’t hurt and it definitely helps you live a far more fulfilling and
+            impactful life. </p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
+        <div class="p-[24px] ">
+          <div class="flex flex-col  items-start gap-[12px] mb-[16px] ">
+            <img src="images/MapPin.png" alt="rectangle"
+              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5]  object-contain" />
+            <h3 class="font-medium font-instrument-sans text-[24px] ">Flexible working</h3>
+          </div>
+          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
+            Doing Big Things Is Not For The Faint-Hearted! We’re Willing To Be Decisive And Take Risks—Inertia Is The
+            Enemy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
+        <div class="p-[24px] ">
+          <div class="flex flex-col  items-start gap-[12px] mb-[16px] ">
+            <img src="images/Monitor.png" alt="rectangle"
+              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5] object-contain" />
+            <h3 class="font-medium font-instrument-sans text-[24px] ">Startup equipment</h3>
+          </div>
+          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
+            Our Standards For Each Other Are “Insanely Great”. We Care Deeply About Our Craft, And Are Unapologetic
+            About Demanding Great.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto">
+        <div class="p-[24px] ">
+          <div class="flex flex-col items-start gap-[12px] mb-[16px] ">
+            <img src="images/Heartbeat.png" alt="rectangle"
+              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5] object-contain" />
+            <h3 class="font-medium font-instrument-sans text-[24px] tracking-[2px]">
+              Global Medical Insurance
+            </h3>
+          </div>
+          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
+            We’re Lean, Scrappy, And Prioritize Results Over Process—We’re Default Suspicious Of Things That Look Like
+            BS.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="w-full bg-[#F5F3ED] h-auto items-center justify-center">
+    <div class="container mx-auto  2xl:px-[48px]">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pb-[5px] auto-rows-auto  ">
+        <!-- Image 1 -->
+        <div class="relative group overflow-hidden w-auto h-[284px] p-4 sm:p-0 md:p-0">
+          <img src="images/gellaryPic1.png" alt="Image 1"
+            class="object-cover w-full h-full  transition-transform duration-300 group-hover:scale-110" />
+
+          <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
+            <div>
+              <h2 class="text-[#DDDDDD] text-[18px] font-medium  font-instrument-sans tracking-[0.25px]">
+                Akash Sharma
+              </h2>
+            </div>
+
+            <div>
+              <p class="text-[#DBDBDB] text-[11px] font-medium  font-instrument-sans  tracking-[1.5px] ">DESIGNER</p>
+            </div>
+
+          </div>
+
+          <div class="absolute inset-0  left-[85%] top-3/4">
+            <div>
+              <img src="images/playbutton.png" alt="">
+            </div>
+          </div>
+
+          <div class="absolute inset-0 right-4 top-[43%]  flex flex-col ml-[20px]">
+            <!-- Box 1 -->
+            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px] ">
+              <img src="images/RectangleFullWhite.png" alt="Box 1" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 2 -->
+            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
+              <img src="images/RectangleHalfWhite.png" alt="Box 2" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 3 -->
+            <div class="overflow-hidden h-2 w-2 sm:h-[8px] sm:w-[8px]">
+              <img src="images/RectangleHalfWhite.png" alt="Box 3" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Image 2 -->
+        <div class="overflow-hidden p-4 sm:p-0 md:p-0">
+          <img src="images/gellaryPic2.png" alt="Image 2"
+            class="w-[480px] h-[284px] object-cover transition-transform duration-300 hover:scale-110" />
+
+        </div>
+
+        <!-- Image 3: Spans 2 rows -->
+        <div class="overflow-hidden row-span-2 p-4 sm:p-0 md:p-0">
+          <img src="images/gellaryPic3.png" alt="Image 3"
+            class="w-[480px] lg:h-[568px] h-[284px] object-cover transition-transform duration-300 hover:scale-110" />
+        </div>
+
+        <!-- Image 4: Spans 2 rows starting from row 2 -->
+        <div class="overflow-hidden row-span-2 p-4 sm:p-0 md:p-0" style="grid-row-start: 2;">
+          <img src="images/gellaryPic4.png" alt="Image 4"
+            class="w-[480px] lg:h-[569px] h-[284px] object-cover transition-transform duration-300 hover:scale-110" />
+        </div>
+
+        <!-- Div instead of Image (Position 5) -->
+        <div
+          class="bg-[#F5F3ED] sm:p-[10px] md:p-[20px] w-full max-w-[480px] h-[284px] flex flex-col justify-between mx-auto text-center p-4 ">
+          <p class="font-instrument-sans text-[16px] font-400 font-italic leading-[24px] text-[#121212]"><i>My favorite
+              part about working at Sevora is the people. Our team is a very special bunch! Every day I am surrounded by
+              some of the brightest, kindest, and most hardworking people I have ever met.</i></p>
+          <div class="flex flex-col sm:flex-row items-center justify-center md:gap-[8px] sm:gap-5 mt-[21px]">
+            <div class="w-[32px] h-[32px] border-[1px] border-[#FFFFFF] overflow-hidden ">
+              <img src="images/gellaryPic6.jpg" alt="CEO Image" class="object-cover w-full h-full" />
+            </div>
+            <div class="text-center sm:text-left font-instrument-sans font-medium sm:mt-0 mt-3 ">
+              <h3 class=" text-[12px] font-medium text-[#121212] tracking-[0.25px]">Akash Sharma</h3>
+              <p class="text-[9px] text-[#737378] mt-[3px] font-medium tracking-[1.5px]">DESIGNER</p>
+            </div>
+          </div>
+
+
+          <div class="relative flex justify-center gap-[8px] lg:mt-[20px] xl:mt-[52px]">
+            <!-- Box 1 -->
+            <div class=" overflow-hidden">
+              <img src="images/RectangleFullBlack.png" alt="Box 1" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 2 -->
+            <div class=" overflow-hidden">
+              <img src="images/RectangleHalfBlack.png" alt="Box 2" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 3 -->
+            <div class=" overflow-hidden">
+              <img src="images/RectangleHalfBlack.png" alt="Box 3" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 4 -->
+            <div class=" overflow-hidden">
+              <img src="images/RectangleHalfBlack.png" alt="Box 4" class="w-full h-full object-cover" />
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- Image 6 -->
+        <div class="overflow-hidden p-4 sm:p-0 md:p-0">
+          <img src="images/gellaryPic5.png" alt="Image 6"
+            class="w-[480px] h-[284px] object-cover transition-transform duration-300 hover:scale-110" />
+        </div>
+
+
+
+        <!-- Div instead of Image (Position 9) -->
+        <div class="relative bg-[#F5F3ED] w-full max-w-[480px] h-[284px] flex items-center justify-center mx-auto">
+
+          <!-- Centered Text -->
+          <div class="text-center font-instrument-sans font-medium px-4">
+            <h1 class="text-[48px] sm:text-[60px] md:text-[72px] text-[#121212]">96%</h1>
+            <p class="text-[12px] sm:text-[13px] md:text-[14px] text-[#424245] font-medium tracking-[1.5px]">SATISFIED
+              EMPLOYEES</p>
+          </div>
+
+          <!-- Right-Aligned Small Boxes -->
+          <div class="absolute right-4 top-[55%] -translate-y-1/2 flex flex-col items-end">
+            <!-- Box 1 -->
+            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
+              <img src="images/RectangleFullBlack.png" alt="Box 1" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 2 -->
+            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
+              <img src="images/RectangleHalfBlack.png" alt="Box 2" class="w-full h-full object-cover" />
+            </div>
+            <!-- Box 3 -->
+            <div class="overflow-hidden h-2 w-2 sm:h-[8px] sm:w-[8px]">
+              <img src="images/RectangleHalfBlack.png" alt="Box 3" class="w-full h-full object-cover" />
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+
+
+  </section>
+
+<footer class="bg-[#F5F3ED]">
+    <div class="container mx-auto bg-[#F5F3ED] text-[#121212] relative  text-left px-[20px] sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px]  2xl:px-[148px] py-[35px] md:py-[100px] overflow-hidden">
+    <div class=" flex flex-wrap 2xl:gap-[106px] lg:gap-[82px]">
+
+      <!-- Logo & Description -->
+      <div class="max-w-[300px]  mb-10">
+        <img src="images/Frame 3.png" alt="SEVORA Logo" class="w-[250px] h-[56px] mb-5" />
+        <p class="text-[16px] font-instrument-sans leading-[1.6] mb-5">
+          Maecenas dignissim justo eget nulla rutrum molestie. Dui, vel Maecenas lobortis sem dui, vel rutrum
+          risus tincidunt ullamcorper.
+        </p>
+        <div class="flex">
+          <img src="images/googleplay.png" alt="Google Play" class="w-[120px] mr-2" />
+          <img src="images/applestore.png" alt="App Store" class="w-[120px]" />
+        </div>
+      </div>
+
+      <!-- Footer Links -->
+      <div class="flex flex-wrap gap-9  xl:gap-[84px] 2xl:gap-[129px]">
+        <!-- Seller -->
+        <div>
+          <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Seller</h4>
+          <ul class="text-[14px] font-instrument-sans space-y-2">
+            <li class="cursor-pointer">Partner With Us</li>
+            <li class="cursor-pointer">Website For You</li>
+          </ul>
+        </div>
+
+        <!-- Delivery -->
+        <div>
+          <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Delivery</h4>
+          <ul class="text-[14px] font-instrument-sans space-y-2">
+            <li class="cursor-pointer">Partner With Us</li>
+            <li class="cursor-pointer">App For You</li>
+          </ul>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Quick Links</h4>
+          <ul class="text-[14px] font-instrument-sans space-y-2">
+            <li class="cursor-pointer">Privacy Policy</li>
+            <li class="cursor-pointer">Terms & Condition</li>
+            <li class="cursor-pointer">Cookie Policy</li>
+            <li class="cursor-pointer">Help & Support</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Social Media</h4>
+          <ul class="text-[14px] font-instrument-sans  space-y-2">
+            <li class="cursor-pointer">Facebook</li>
+            <li class="cursor-pointer">Instagram</li>
+            <li class="cursor-pointer">LinkedIn</li>
+            <li class="cursor-pointer">Twitter</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="w-full bg-[#F5F3ED] mx-auto">
+      <div
+        class="pt-10 bg-[#F5F3ED] py-10 text-center text-xs text-[#121212] text-[12px] font-instrument-sans tracking-[2px]">
+        © 2025 SEVORA. ALL RIGHTS RESERVED.
+      </div>
+    </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

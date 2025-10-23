@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEVORA</title>
+  <link href="./output.css" rel="stylesheet" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet">
+<style>
+  .blogcatagory {
+    @apply px-4 py-2 rounded bg-gray-200 text-black transition;
+  }
+  .active-btn {
+    @apply bg-blue-500 text-white;
+  }
+</style>
+
+</head>
+
+<body class="bg-black text-white  z-10">
+
+  <!-- HEADER / NAVIGATION -->
+
+
+  
+  <header class="bg-[#121212]">
+    <nav
+      class="flex items-center justify-between mx-auto sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[160px] h-[100px] relative">
+
+      <!-- Left: Logo -->
+      <div>
+        <img src="images/SEVORA Logo.png" alt="SEVORA Logo" class="w-[215px] h-[48px]" />
+      </div>
+
+      <!-- Middle: Navigation Links -->
+      <ul id="menu" class="hidden lg:flex flex-col lg:flex-row gap-6 text-[13px] font-instrument-sans 
+  absolute lg:static top-[100px] left-0 w-full lg:w-auto 
+  bg-[#121212]/90 lg:bg-transparent leading-[40px]  <!-- 🔥 added /90 for opacity -->
+  p-6 lg:p-0 z-40">
+        <li><a href="index.html" class="text-white font-medium">ABOUT US</a></li>
+        <li><a href="index2.html" class="text-white font-medium">OURTEAMS</a></li>
+        <li><a href="index3.html" class="text-white font-medium">CAREERS</a></li>
+        <li><a href="index4.html" class="text-white font-medium">BLOG</a></li>
+        <li><a href="#" class="text-white font-medium">NEWS</a></li>
+      </ul>
+
+      <!-- Right: Toggle + Back to Home -->
+      <div class="flex items-center gap-4">
+        <!-- Menu Toggle (only on mobile) -->
+        <button id="menu-toggle" class="block lg:hidden text-white focus:outline-none">
+          <!-- Hamburger Icon -->
+          <svg id="hamburger" class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+          <!-- Close Icon -->
+          <svg id="close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Back to Home Button (always visible) -->
+        <div class="w-[181px] h-[44px]">
+          <a href="#" class="inline-flex items-center font-instrument-sans font-medium text-center py-[13px] px-[26px]
+            bg-[#242424] text-white border border-[#2E2E2E] hover:bg-[#555] text-[13px] transition gap-2">
+            <img src="images/ArrowLeft.png" alt="Back Arrow" class="w-4 h-4" />
+            <span>BACK TO HOME</span>
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Text & Video Section -->
+  <section class="w-full bg-[#121212] text-white">
+    <div class="max-w-[1440px] mx-auto flex flex-col md:flex-row items-center gap-10 px-4 sm:px-6 md:px-[100px] py-12">
+
+      <!-- LEFT TEXT -->
+      <div class="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left">
+        <h1 class="text-[40px] leading-[48px] md:text-[80px] md:leading-[88px] font-instrument-serif mb-6">
+          Shaping Tomorrow’s<br />
+          <span class="text-[#737378]">Shopping Experience</span><br />
+          Today.
+        </h1>
+        <button
+          class="w-[193px] h-[42px] py-[10px] px-[24px] text-[13px] font-medium font-instrument-sans text-[#121212] bg-white hover:bg-gray-200 transition">
+          DOWNLOAD THE APP
+        </button>
+      </div>
+
+      <!-- RIGHT VIDEO -->
+      <div class="w-full md:w-1/2 flex justify-center md:justify-end items-center">
+        <div class="w-full max-w-[600px] h-auto md:h-[480px]">
+          <video autoplay muted loop playsinline class="w-full h-full object-contain">
+            <source src="images/b9e7507766194a7d8035dc372c608159 (1).mp4" type="video/mp4" />
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <div class="flex items-center gap-4 w-full max-w-md">
+    <!-- Left Arrow Button -->
+    <button class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition" onclick="prevSlide()">
+      <img src="images/LeftArrow.png" alt="Left Arrow" class="w-6 h-6">
+    </button>
+
+    <!-- Horizontal Progress Bar -->
+    <div class="relative flex-1 h-[4px] bg-gray-300 rounded cursor-pointer" onclick="middleClick()">
+      <div id="progress" class="absolute left-0 top-0 h-full bg-black transition-all duration-300" style="width: 0%;">
+      </div>
+    </div>
+
+    <!-- Right Arrow Button -->
+    <button class="p-3 rounded-full bg-gray-200 hover:bg-gray-300 transition" onclick="nextSlide()">
+      <img src="images/RightArrow.png" alt="Right Arrow" class="w-6 h-6">
+    </button>
+  </div>
+
+  
+
+
+  <div class="w-full max-w-2xl p-6 bg-white shadow-lg rounded-2xl">
+
+    <!-- Progress Bar -->
+    <div class="relative mb-10">
+      <div class="absolute top-1/2 left-0 w-full h-1 bg-gray-300 -translate-y-1/2"></div>
+      <div id="progress" class="absolute top-1/2 left-0 h-1 bg-blue-500 -translate-y-1/2 transition-all duration-300"
+        style="width: 0%;"></div>
+
+      <div class="relative flex justify-between">
+        <div class="step w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-white font-bold">1
+        </div>
+        <div class="step w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-white font-bold">2
+        </div>
+        <div class="step w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-white font-bold">3
+        </div>
+        <div class="step w-10 h-10 flex items-center justify-center rounded-full bg-gray-300 text-white font-bold">4
+        </div>
+      </div>
+    </div>
+
+    <!-- Step Content -->
+    <div id="step-content" class="text-center text-lg font-medium mb-6">
+      Step 1: Personal Information
+    </div>
+
+    <!-- Buttons -->
+    <div class="flex justify-between">
+      <button id="prev" class="px-6 py-2 bg-gray-300 text-gray-700 rounded-lg cursor-not-allowed" disabled>
+        Prev
+      </button>
+      <button id="next" class="px-6 py-2 bg-blue-500 text-white rounded-lg">
+        Next
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const steps = document.querySelectorAll(".step");
+    const progresss = document.getElementById("progress");
+    const prevBtn = document.getElementById("prev");
+    const nextBtn = document.getElementById("next");
+    const content = document.getElementById("step-content");
+
+    let currentStep = 1;
+
+    const stepMessages = [
+      "Step 1: Personal Information",
+      "Step 2: Address Details",
+      "Step 3: Payment Information",
+      "Step 4: Review & Submit"
+    ];
+
+    function updateSteps() {
+      steps.forEach((step, i) => {
+        if (i < currentStep) {
+          step.classList.add("bg-blue-500");
+          step.classList.remove("bg-gray-300");
+        } else {
+          step.classList.remove("bg-blue-500");
+          step.classList.add("bg-gray-300");
+        }
+      });
+
+      progress.style.width = ((currentStep - 1) / (steps.length - 1)) * 100 + "%";
+      content.textContent = stepMessages[currentStep - 1];
+
+      prevBtn.disabled = currentStep === 1;
+      prevBtn.classList.toggle("cursor-not-allowed", currentStep === 1);
+      prevBtn.classList.toggle("bg-gray-300", currentStep === 1);
+      prevBtn.classList.toggle("bg-blue-500", currentStep > 1);
+      prevBtn.classList.toggle("text-white", currentStep > 1);
+
+      nextBtn.textContent = currentStep === steps.length ? "Finish" : "Next";
+    }
+
+    nextBtn.addEventListener("click", () => {
+      if (currentStep < steps.length) {
+        currentStep++;
+        updateSteps();
+      }
+    });
+
+    prevBtn.addEventListener("click", () => {
+      if (currentStep > 1) {
+        currentStep--;
+        updateSteps();
+      }
+    });
+
+    updateSteps();
+  </script>
+  <section class="flex flex-col items-center px-4 py-12">
+    <!-- Parent Card -->
+    <div class="relative bg-[#F5F3ED] border border-[#121212] p-6 shadow-sm text-center w-full max-w-[300px]">
+      <h3 class="text-[22px] font-semibold">CEO</h3>
+      <p class="text-[14px] text-[#555] mt-2">Parent Role</p>
+    </div>
+
+    <!-- Connector line from parent to children -->
+    <div class="w-[2px] h-8 bg-[#121212]"></div>
+
+    <!-- Children Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8 w-full max-w-[1000px] relative">
+      <!-- Horizontal line across children (only visible lg+) -->
+      <div class="absolute top-[-32px] left-0 right-0 hidden lg:block">
+        <div class="w-full h-[2px] bg-[#121212]"></div>
+      </div>
+
+      <!-- Child 1 -->
+      <div class="relative flex flex-col items-center">
+        <!-- Vertical connector -->
+        <div class="hidden lg:block absolute top-[-32px] left-1/2 w-[2px] h-8 bg-[#121212]"></div>
+        <div class="bg-[#F5F3ED] border border-[#121212] p-6 shadow-sm text-center w-full max-w-[220px]">
+          <h3 class="text-[18px] font-semibold">Manager 1</h3>
+          <p class="text-[14px] text-[#555] mt-2">Department A</p>
+        </div>
+      </div>
+
+      <!-- Child 2 -->
+      <div class="relative flex flex-col items-center">
+        <div class="hidden lg:block absolute top-[-32px] left-1/2 w-[2px] h-8 bg-[#121212]"></div>
+        <div class="bg-[#F5F3ED] border border-[#121212] p-6 shadow-sm text-center w-full max-w-[220px]">
+          <h3 class="text-[18px] font-semibold">Manager 2</h3>
+          <p class="text-[14px] text-[#555] mt-2">Department B</p>
+        </div>
+      </div>
+
+      <!-- Child 3 -->
+      <div class="relative flex flex-col items-center">
+        <div class="hidden lg:block absolute top-[-32px] left-1/2 w-[2px] h-8 bg-[#121212]"></div>
+        <div class="bg-[#F5F3ED] border border-[#121212] p-6 shadow-sm text-center w-full max-w-[220px]">
+          <h3 class="text-[18px] font-semibold">Manager 3</h3>
+          <p class="text-[14px] text-[#555] mt-2">Department C</p>
+        </div>
+      </div>
+
+      <!-- Child 4 -->
+      <div class="relative flex flex-col items-center">
+        <div class="hidden lg:block absolute top-[-32px] left-1/2 w-[2px] h-8 bg-[#121212]"></div>
+        <div class="bg-[#F5F3ED] border border-[#121212] p-6 shadow-sm text-center w-full max-w-[220px]">
+          <h3 class="text-[18px] font-semibold">Manager 4</h3>
+          <p class="text-[14px] text-[#555] mt-2">Department D</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<div class="w-full bg-[#F5F3ED] flex justify-center">
+  <section class="text-black w-full font-serif relative">
+    <div class="bg-[#F5F3ED] py-[35px] md:py-[100px] px-[20px] sm:px-[50px] xl:px-0">
+
+      <!-- Heading -->
+      <h1
+        class="text-[32px] sm:text-[42px] md:text-[52px] font-normal md:mb-[23px] font-instrument-serif text-center">
+        <span class="text-[#737378]">Progress</span> Built with Purpose
+      </h1>
+
+      <!-- Slider Wrapper -->
+      <div class="overflow-hidden max-w-[1240px] mx-auto mt-[45px] md:mt-[75px]">
+        <!-- Track -->
+        <div id="sliderTrack"
+          class="flex transition-transform duration-500 ease-in-out"
+          style="transform: translateX(0%);">
+
+          <!-- Slide 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[55px] flex-shrink-0 w-full">
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2025</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Product <br> Launching</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">It began with a simple frustration...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2025</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Financial <br> Community</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">It began with a simple frustration...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2025</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Build <br> Community</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">It began with a simple frustration...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2025</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Business <br> Agreement</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">It began with a simple frustration...</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[55px] flex-shrink-0 w-full">
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2026</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Next <br> Feature</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">Another set of content...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2026</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Growth <br> Strategy</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">Another set of content...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2026</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">Market <br> Expansion</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">Another set of content...</p>
+              </div>
+            </div>
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-white border border-[#121212] p-6 pt-10 shadow-sm">
+              <div class="absolute top-[-26px] left-1/2 -translate-x-1/2 bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] flex items-center justify-center">2026</div>
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif">New <br> Partnership</h3>
+                <p class="text-[16px] text-[#555] font-instrument-sans mt-[12px]">Another set of content...</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+<!-- Slider Wrapper -->
+
+<!-- Controls -->
+<div class="flex items-center justify-center gap-4 mt-6">
+  <button onclick="prevSlide()" class="px-4 py-2 border">⬅️</button>
+  <div class="relative w-[200px] h-[6px] bg-gray-300 rounded cursor-pointer" onclick="middleClick()">
+    <div id="progress" class="absolute left-0 top-0 h-full bg-black rounded transition-all duration-500"></div>
+  </div>
+  <button onclick="nextSlide()" class="px-4 py-2 border">➡️</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 2; // number of groups of 4 cards
+  const sliderTrack = document.getElementById("sliderTrack");
+  const progress = document.getElementById("progress");
+
+  function updateSlider() {
+    // Slide
+    sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+
+    // Progress
+    const percentage = (currentSlide / (totalSlides - 1)) * 100;
+    progress.style.width = percentage + "%";
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) {
+      currentSlide--;
+      updateSlider();
+    }
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) {
+      currentSlide++;
+      updateSlider();
+    }
+  }
+
+  function middleClick() {
+    nextSlide(); // click on bar → go next
+  }
+
+  updateSlider();
+</script>
+
+
+<ul
+  class="flex flex-wrap justify-center text-[14px] gap-[11px] font-regular font-instrument-sans items-center mb-[32px]">
+
+  <li>
+    <a href="index.html" target="_blank" class="blogcatagory active-btn">View All</a>
+  </li>
+  <li>
+    <a href="index2.html" target="_blank" class="blogcatagory">Technology</a>
+  </li>
+  <li>
+    <a href="index3.html" target="_blank" class="blogcatagory">Design</a>
+  </li>
+  <li>
+    <a href="index4.html" target="_blank" class="blogcatagory">Marketing</a>
+  </li>
+</ul>
+
+<script>
+  const buttons = document.querySelectorAll(".blogcatagory");
+
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      // Remove active class from all buttons
+      buttons.forEach(b => b.classList.remove("active-btn"));
+      // Add active class to clicked button
+      btn.classList.add("active-btn");
+    });
+  });
+</script>
+          <div class="relative w-full  h-[1px] bg-[#DBDBDB] mx-auto"></div>
+
+          <footer class=" bg-[#F5F3ED] text-[#121212]   ">
+            <div class="container px-[100px]  mx-auto py-[100px] flex flex-wrap gap-16 xl:gap-[130px]">
+
+              <!-- Logo & Description -->
+              <div class="max-w-[300px]  mb-10">
+                <img src="images/Frame 3.png" alt="SEVORA Logo" class="w-[250px] h-[56px] mb-5" />
+                <p class="text-[16px] font-instrument-sans leading-[1.6] mb-5">
+                  Maecenas dignissim justo eget nulla rutrum molestie. Dui, vel Maecenas lobortis sem dui, vel rutrum
+                  risus tincidunt ullamcorper.
+                </p>
+                <div class="flex">
+                  <img src="images/googleplay.png" alt="Google Play" class="w-[120px] mr-2" />
+                  <img src="images/applestore.png" alt="App Store" class="w-[120px]" />
+                </div>
+              </div>
+
+
+              <!-- Footer Links -->
+              <div class="flex flex-wrap gap-10 xl:gap-[120px]">
+                <!-- Seller -->
+                <div>
+                  <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Seller</h4>
+                  <ul class="text-[14px] font-instrument-sans space-y-2">
+                    <li class="cursor-pointer">Partner With Us</li>
+                    <li class="cursor-pointer">Website For You</li>
+                  </ul>
+                </div>
+
+                <!-- Delivery -->
+                <div>
+                  <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Delivery</h4>
+                  <ul class="text-[14px] font-instrument-sans space-y-2">
+                    <li class="cursor-pointer">Partner With Us</li>
+                    <li class="cursor-pointer">App For You</li>
+                  </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                  <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Quick Links</h4>
+                  <ul class="text-[14px] font-instrument-sans space-y-2">
+                    <li class="cursor-pointer">Privacy Policy</li>
+                    <li class="cursor-pointer">Terms & Condition</li>
+                    <li class="cursor-pointer">Cookie Policy</li>
+                    <li class="cursor-pointer">Help & Support</li>
+                  </ul>
+                </div>
+
+                <!-- Social Media -->
+                <div>
+                  <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Social Media</h4>
+                  <ul class="text-[14px] font-instrument-sans  space-y-2">
+                    <li class="cursor-pointer">Facebook</li>
+                    <li class="cursor-pointer">Instagram</li>
+                    <li class="cursor-pointer">LinkedIn</li>
+                    <li class="cursor-pointer">Twitter</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="max-w-[1440px] mx-auto">
+              <div
+                class="pt-10 bg-[#F5F3ED] py-10 text-center text-xs text-[#444] text-[12px] font-instrument-sans tracking-[2px]">
+                © 2025 SEVORA. ALL RIGHTS RESERVED.
+              </div>
+            </div>
+
+          </footer>
+          <script src="script.js"></script>
+</body>
+
+</html>
