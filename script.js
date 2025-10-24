@@ -131,55 +131,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // box slider for the about us page..
- document.addEventListener("DOMContentLoaded", () => {
-  const sliderTrack = document.getElementById("sliderTrack");
-  const progress = document.getElementById("progress");
-  const boxes = sliderTrack.querySelectorAll(".relative");
-  const totalBoxes = boxes.length;
-  const visibleBoxes = 4; // show 4 at a time
-  let currentIndex = 0;
+ document.addEventListener('DOMContentLoaded', () => {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 55,
+    loop: true,
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 4, spaceBetween: 55 },
+    },
+  });
 
-  function updateSlider(instant = false) {
-    if (!sliderTrack) return;
-    sliderTrack.style.transition = instant ? "none" : "transform 0.6s ease-in-out";
-    sliderTrack.style.transform = `translateX(-${currentIndex * (100 / visibleBoxes)}%)`;
+  const prevBtn = document.getElementById("customPrev");
+  const nextBtn = document.getElementById("customNext");
+  const progressEl = document.getElementById("customProgress");
 
-    // update progress bar
-    const percentage = (currentIndex / (totalBoxes - visibleBoxes)) * 100;
-    progress.style.width = Math.min(percentage, 100) + "%";
+  if(prevBtn && nextBtn && progressEl) {
+    prevBtn.addEventListener("click", () => swiper.slidePrev());
+    nextBtn.addEventListener("click", () => swiper.slideNext());
+
+    function updateProgress() {
+      const totalSlides = swiper.slides.length - swiper.loopedSlides; // exclude loop duplicates
+      const progress = (swiper.realIndex / totalSlides) * 100;
+      progressEl.style.width = progress + "%";
+    }
+
+    swiper.on("slideChange", updateProgress);
+    updateProgress();
   }
-
-  window.nextSlide = function () {
-    currentIndex++;
-    if (currentIndex > totalBoxes - visibleBoxes) {
-      // wrap to start
-      currentIndex = 0;
-      updateSlider(true); // instant reset
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => updateSlider());
-      });
-    } else {
-      updateSlider();
-    }
-  };
-
-  window.prevSlide = function () {
-    currentIndex--;
-    if (currentIndex < 0) {
-      currentIndex = totalBoxes - visibleBoxes;
-      updateSlider(true);
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => updateSlider());
-      });
-    } else {
-      updateSlider();
-    }
-  };
-
-  // initialize
-  updateSlider();
 });
-
-
-
 

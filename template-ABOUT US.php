@@ -319,6 +319,7 @@ $banner_video = get_field('banner_video');
 </div>
 
 <!-- Swiper JS -->
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
@@ -339,7 +340,8 @@ $banner_video = get_field('banner_video');
 
   // Custom progress bar
   function updateProgress() {
-    const progress = ((swiper.realIndex + 1) / swiper.slides.length) * 100;
+    const totalSlides = swiper.slides.length - (swiper.loopedSlides ); // exclude loop duplicates
+    const progress = ((swiper.realIndex ) / totalSlides) * 100;
     document.getElementById("customProgress").style.width = progress + "%";
   }
 
