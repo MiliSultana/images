@@ -89,7 +89,9 @@ $banner_video = get_field('banner_video');
       <!-- Timeline Grid -->
       <div
         class=" container mx-auto grid grid-cols-1 px-[20px] sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px]  2xl:px-[160px]  lg:grid-cols-3 gap-[40px] ">
-        <!-- Box 1 -->
+             
+        <?php if( have_rows('re_imagining') ): ?>
+          <?php while( have_rows('re_imagining') ): the_row(); ?>
         <div class="relative bg-[#F5F3ED] border border-gray-400 p-[20px]  shadow-sm overflow-hidden">
           <!-- Background image -->
           <img src="<?php bloginfo('template_directory');?>/images/SmallVector.png" alt=""
@@ -102,84 +104,24 @@ $banner_video = get_field('banner_video');
             <!-- Side label (desktop) -->
             <div
               class="hidden lg:block absolute font-instrument-serif left-[20px] top-[55%] transform-none rotate-[-90deg] origin-left text-[40px] text-[#121212] font-regular">
-              Our Vision
+              <?php the_sub_field('title'); ?>
             </div>
 
             <!-- Side label (mobile) -->
             <div class="block lg:hidden  text-left text-lg font-semibold text-black">
-              Our Vision
+              <?php the_sub_field('title'); ?>
             </div>
             <p
               class="text-[15px] md:text-[17px] lg:text-[24px] leading-[26px] md:leading-[36px] text-[#424245] font-instrument-sans font-regular px-2 md:px-0 text-left ml-0 md:ml-[64px]">
-              To empower shoppers with freedom, comfort, and control by making product experience an essential part of
-              the
-              buying journey.
+             <?php the_sub_field('content'); ?>
             </p>
           </div>
         </div>
+ <?php endwhile; ?>
+      <?php endif; ?>
+       
 
-        <!-- Box 2 -->
-        <div class="relative bg-[#F5F3ED] border border-gray-400 p-[20px] shadow-sm overflow-hidden">
-          <img src="<?php bloginfo('template_directory');?>/images/SmallVector.png" alt=""
-            class="absolute bottom-0 right-0 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px] xl:w-[240px] 2xl:w-[340px] h-auto z-0" />
-          <div class="absolute inset-0 bg-[#F5F3ED] opacity-5 z-0"></div>
-
-          <div class="relative z-10 text-center">
-            <div
-              class="hidden lg:block absolute font-instrument-serif left-[20px] top-[64%] transform-none rotate-[-90deg] origin-left text-[40px] text-[#121212] font-regular">
-              Our Mission
-            </div>
-            <div class="block lg:hidden  text-left text-lg font-semibold text-black">
-              Our Mission
-            </div>
-            <p
-              class="text-[15px] md:text-[17px] lg:text-[24px] leading-[26px] md:leading-[36px] text-[#424245] font-instrument-sans font-normal px-2 md:px-0 text-left ml-0 md:ml-[64px]">
-              To redefine global e-commerce by creating a world where decisions are made through experience—not just
-              expectation.
-            </p>
-          </div>
-        </div>
-
-        <!-- Box 3 -->
-        <div class="relative bg-[#F5F3ED] border border-gray-400 p-[14px] pb-[94px] shadow-sm overflow-hidden">
-          <img src="<?php bloginfo('template_directory');?>/images/SmallVector.png" alt=""
-            class="absolute bottom-0 right-0 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px] xl:w-[240px] 2xl:w-[340px] h-auto z-0" />
-          <div class="absolute inset-0 bg-[#F5F3ED] opacity-5 z-0"></div>
-
-          <div class="relative z-10 text-center">
-            <div
-              class="hidden lg:block absolute font-instrument-serif left-[25px] top-[37%] transform-none rotate-[-90deg] origin-left text-[40px] text-[#121212] font-regular">
-              Core Values
-            </div>
-            <div class="block lg:hidden  text-left text-lg font-semibold text-black">
-              Core Values
-            </div>
-            <ul class="text-left ml-[20px] md:ml-[68px] text-[#737378] space-y-4 font-instrument-sans">
-              <li
-                class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-[10px] before:h-[10px] before:border before:border-[#000000] before:bg-white before:shadow-[1px_0_black,0_1px_black,1px_1px_black]">
-                <span class="text-[#424245]">Customer-Centric Innovation:</span> Designing experiences that reflect real
-                needs and empower confident shopping.
-              </li>
-              <li
-                class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-[10px] before:h-[10px] before:border before:border-[#000000] before:bg-white before:shadow-[1px_0_black,0_1px_black,1px_1px_black]">
-                <span class="text-[#424245]">Empowered Decision-Making:</span> Giving users control to discover, try,
-                and choose on their own terms.
-              </li>
-              <li
-                class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-[10px] before:h-[10px] before:border before:border-[#000000] before:bg-white before:shadow-[1px_0_black,0_1px_black,1px_1px_black]">
-                <span class="text-[#424245]">Trust Through Transparency:</span> Clear, honest interactions that build
-                loyalty and eliminate uncertainty.
-              </li>
-              <li
-                class="relative pl-4 before:content-[''] before:absolute before:left-0 before:top-2 before:w-[10px] before:h-[10px] before:border before:border-[#000000] before:bg-white before:shadow-[1px_0_black,0_1px_black,1px_1px_black]">
-                <span class="text-[#424245]">Seamless Experience:</span> Smooth, simple shopping from product discovery
-                to doorstep delivery.
-              </li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
+      
 
   </div>
   </section>
