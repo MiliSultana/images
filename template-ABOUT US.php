@@ -252,284 +252,111 @@ $banner_video = get_field('banner_video');
           </div>
         </div>
 
-       <div class="max-w-[1440px] mx-auto">
-          <div class="hidden xl:block relative h-[1px] w-[973px] mx-auto justify-center items-center bg-[#121212]  ">
-          </div>
-        </div>
+   
+<!-- Outer Wrapper -->
+<div class="overflow-hidden max-w-[1240px] mx-auto relative pb-16">
 
-        <div class="overflow-hidden max-w-[1240px] mx-auto">
-          <!-- Track -->
-          <div id="sliderTrack" class="flex transition-transform duration-500 ease-in-out"
-            style="transform: translateX(0%);">
+  <!-- Slider Track -->
+  <div class="swiper mySwiper">
+    <div id="sliderTrack" class="swiper-wrapper flex transition-transform duration-500 ease-in-out">
 
-            <!-- Timeline Grid first slider -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[55px] mt-[45px] md:mt-[75px] flex-shrink-0 w-full">
-
-              <!-- Box 1 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Product <br> Launching</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
+      <?php if( have_rows('progress') ): ?>
+        <?php while( have_rows('progress') ): the_row(); ?>
+          
+          <!-- Box -->
+          <div class="swiper-slide flex-shrink-0 w-full md:w-1/2 xl:w-1/4 flex justify-center mt-[45px] md:mt-[75px]">
+            <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
+              
+              <!-- Year -->
+              <div class="absolute text2025 top-[-26px] ml-[106px] bg-[#F0EEE5] 
+                w-[105px] h-[50px] border border-[#121212] z-10 
+                left-1/2 transform -translate-x-3/4 flex items-center justify-center">
+                <?php the_sub_field('year'); ?>
               </div>
 
-              <!-- Box 2 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Financial <br> Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
+              <!-- Line Image -->
+              <img src="<?php bloginfo('template_directory'); ?>/images/Line 2.svg"
+                alt="Line"
+                class="absolute mt-[-117px] left-[130px] transform xl:block hidden h-[51px] w-auto z-10" />
 
-              <!-- Box 3 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Build <br>Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 4 -->
-              <div class="relative xl:h-[269px] xl:w-[269px]  bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Business <br> Agreement</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
+              <!-- Content -->
+              <div class="text-center">
+                <h3 class="text-[32px] font-instrument-serif leading-[38px]">
+                  <?php the_sub_field('title'); ?>
+                </h3>
+                <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
+                  <?php the_sub_field('content'); ?>
+                </p>
               </div>
             </div>
-<!-- Timeline Grid second slider -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[55px] mt-[45px] md:mt-[75px] flex-shrink-0 w-full">
-
-              <!-- Box 1 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Product <br> Launching</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 2 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Financial <br> Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 3 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Build <br>Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 4 -->
-              <div class="relative xl:h-[269px] xl:w-[269px]  bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Business <br> Agreement</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-            </div>
-<!-- Timeline Grid third slider -->
-            <div
-              class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-[55px] mt-[45px] md:mt-[75px] flex-shrink-0 w-full">
-
-              <!-- Box 1 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Product <br> Launching</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 2 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Financial <br> Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 3 -->
-              <div class="relative xl:h-[269px] xl:w-[269px] bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[129px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Build <br>Community</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Box 4 -->
-              <div class="relative xl:h-[269px] xl:w-[269px]  bg-[#F5F3ED] border border-[#121212] p-6 pt-10 shadow-sm">
-                <div class="absolute text2025 top-[-26px] ml-[106px] 
-            bg-[#F0EEE5] w-[105px] h-[50px] border border-[#121212] z-10  left-1/2 transform -translate-x-3/4
-            flex items-center justify-center">
-                  2025
-                </div>
-                <img src="<?php bloginfo('template_directory');?>/images/Line 2.svg" alt="Line"
-                  class="absolute mt-[-117px] left-[130px] transform xl:block hidden  h-[51px] w-auto z-10" />
-                <div class="text-center">
-                  <h3 class="text-[32px] font-instrument-serif leading-[38px]">Business <br> Agreement</h3>
-                  <p class="text-[16px] text-[#555] leading-[1.5] font-instrument-sans mt-[12px]">
-                    It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive
-                    shopper, grew tired of guesswork.
-                  </p>
-                </div>
-              </div>
-            </div>
-
           </div>
 
+        <?php endwhile; ?>
+      <?php endif; ?>
+
+    </div>
+  </div>
+
+  <!-- Custom Navigation & Progress Bar -->
+  <div class="mt-6 flex items-center justify-center gap-4">
+    <!-- Prev -->
+    <button id="customPrev">
+      <img src="<?php bloginfo('template_directory');?>/images/LeftArrow.png" alt="Prev" class="w-[18px] h-[14px]">
+    </button>
+
+    <!-- Progress -->
+    <div class="relative w-[100px] h-[3px] bg-[#DBDBDB] cursor-pointer">
+      <div id="customProgress"
+        class="absolute left-0 top-0 h-full bg-[#121212] transition-all duration-300"
+        style="width:0%;"></div>
+    </div>
+
+    <!-- Next -->
+    <button id="customNext">
+      <img src="<?php bloginfo('template_directory');?>/images/RightArrow.png" alt="Next" class="w-[18px] h-[14px]">
+    </button>
+  </div>
+</div>
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 55,
+    loop: true,
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 4, spaceBetween: 55 },
+    },
+  });
+
+  // Custom navigation
+  document.getElementById("customPrev").addEventListener("click", () => swiper.slidePrev());
+  document.getElementById("customNext").addEventListener("click", () => swiper.slideNext());
+
+  // Custom progress bar
+  function updateProgress() {
+    const progress = ((swiper.realIndex + 1) / swiper.slides.length) * 100;
+    document.getElementById("customProgress").style.width = progress + "%";
+  }
+
+  swiper.on("slideChange", updateProgress);
+  updateProgress(); // initialize
+</script>
 
 
-        </div>
 
-        <div class=" mt-[40px] items-center justify-center mx-auto flex">
-          <div class="flex items-center gap-[12px]  ">
-            <!-- Left Arrow Button -->
-            <button class="  " onclick="prevSlide()">
-              <img src="<?php bloginfo('template_directory');?>/images/LeftArrow.png" alt="Left Arrow" class="w-[18px] h-[14px]">
-            </button>
-
-            <!-- Horizontal Progress Bar -->
-            <div class="relative mx-auto flex-1 h-[3px] w-[100px] justify-center bg-[#DBDBDB] cursor-pointer"
-              onclick="middleClick()">
-              <div id="progress" class="absolute left-0 top-0 h-full bg-[#121212] transition-all duration-300"
-                style="width: 0%;"></div>
-            </div>
-
-            <!-- Right Arrow Button -->
-            <button class="" onclick="nextSlide()">
-              <img src="<?php bloginfo('template_directory');?>/images/RightArrow.png" alt="Right Arrow" class="w-[18px] h-[14px]">
-            </button>
-          </div>
+        
 
 
-        </div>
-      </div>
+    
     </section>
   </div>
 
-<script src="<?php bloginfo('template_directory');?>/script.js"></script>
+
 
 
   <?php get_footer(); ?>
