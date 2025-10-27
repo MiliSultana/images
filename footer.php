@@ -5,67 +5,67 @@
 
         <!-- Logo & Description -->
         <div class="max-w-[300px]  mb-10">
-          <img src="<?php bloginfo('template_directory');?>/images/Frame 3.png" alt="SEVORA Logo" class="w-[250px] h-[56px] mb-5" />
-          <p class="text-[16px] font-instrument-sans leading-[1.6] mb-5">
-            Maecenas dignissim justo eget nulla rutrum molestie. Dui, vel Maecenas lobortis sem dui, vel rutrum
-            risus tincidunt ullamcorper.
-          </p>
+          <?php 
+           if(is_active_sidebar('footer1')){
+            dynamic_sidebar('footer1');
+           }
+           ?>
           <div class="flex">
-            <img src="<?php bloginfo('template_directory');?>/images/googleplay.png" alt="Google Play" class="w-[120px] mr-2" />
-            <img src="<?php bloginfo('template_directory');?>/images/applestore.png" alt="App Store" class="w-[120px]" />
-          </div>
+             <?php 
+           if(is_active_sidebar('logos')){
+            dynamic_sidebar('logos');
+           }
+           ?>
+           </div>
         </div>
 
         <!-- Footer Links -->
         <div class="flex flex-wrap gap-9  xl:gap-[84px] 2xl:gap-[129px]">
           <!-- Seller -->
           <div>
-            <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Seller</h4>
-            <ul class="text-[14px] font-instrument-sans space-y-2">
-              <li class="cursor-pointer">Partner With Us</li>
-              <li class="cursor-pointer">Website For You</li>
-            </ul>
+           <?php 
+           if(is_active_sidebar('footer2')){
+            dynamic_sidebar('footer2');
+           }
+           ?>
           </div>
 
           <!-- Delivery -->
           <div>
-            <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">For Delivery</h4>
-            <ul class="text-[14px] font-instrument-sans space-y-2">
-              <li class="cursor-pointer">Partner With Us</li>
-              <li class="cursor-pointer">App For You</li>
-            </ul>
+            <?php 
+           if(is_active_sidebar('footer3')){
+            dynamic_sidebar('footer3');
+           }
+           ?>
           </div>
 
           <!-- Quick Links -->
           <div>
-            <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Quick Links</h4>
-            <ul class="text-[14px] font-instrument-sans space-y-2">
-              <li class="cursor-pointer">Privacy Policy</li>
-              <li class="cursor-pointer">Terms & Condition</li>
-              <li class="cursor-pointer">Cookie Policy</li>
-              <li class="cursor-pointer">Help & Support</li>
-            </ul>
+             <?php 
+           if(is_active_sidebar('footer4')){
+            dynamic_sidebar('footer4');
+           }
+           ?>
           </div>
 
           <!-- Social Media -->
           <div>
-            <h4 class="text-[16px] font-instrument-sans font-[500] mb-2">Social Media</h4>
-            <ul class="text-[14px] font-instrument-sans  space-y-2">
-              <li class="cursor-pointer">Facebook</li>
-              <li class="cursor-pointer">Instagram</li>
-              <li class="cursor-pointer">LinkedIn</li>
-              <li class="cursor-pointer">Twitter</li>
-            </ul>
+               <?php 
+           if(is_active_sidebar('footer5')){
+            dynamic_sidebar('footer5');
+           }
+           ?>
           </div>
         </div>
       </div>
 
       <!-- Footer Bottom -->
       <div class="w-full bg-[#F5F3ED] mx-auto">
-        <div
-          class="pt-10 bg-[#F5F3ED] py-10 text-center text-xs text-[#121212] text-[12px] font-instrument-sans tracking-[2px]">
-          © 2025 SEVORA. ALL RIGHTS RESERVED.
-        </div>
+         <?php 
+           if(is_active_sidebar('footer_bottom')){
+            dynamic_sidebar('footer_bottom');
+           }
+           ?>
       </div>
     </div>
   </footer>

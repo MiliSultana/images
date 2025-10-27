@@ -94,7 +94,14 @@ $banner_video = get_field('banner_video');
           <?php while( have_rows('re_imagining') ): the_row(); ?>
         <div class="relative bg-[#F5F3ED] border border-gray-400 p-[20px]  shadow-sm overflow-hidden">
           <!-- Background image -->
-          <img src="<?php bloginfo('template_directory');?>/images/SmallVector.png" alt=""
+
+          <?php 
+$back_img = get_sub_field('back_img'); 
+
+?>
+
+
+          <img src="<?php echo $back_img['url']; ?>" alt=""
             class="absolute bottom-0 right-0 w-[120px] sm:w-[150px] md:w-[180px] lg:w-[200px] xl:w-[240px] 2xl:w-[340px] h-auto z-0" />
           <!-- Overlay -->
           <div class="absolute inset-0 bg-[#F5F3ED] opacity-5 z-0"></div>
@@ -103,7 +110,7 @@ $banner_video = get_field('banner_video');
           <div class="relative z-10 text-center">
             <!-- Side label (desktop) -->
             <div
-              class="hidden lg:block absolute font-instrument-serif left-[20px] top-[55%] transform-none rotate-[-90deg] origin-left text-[40px] text-[#121212] font-regular">
+              class="hidden lg:block absolute font-instrument-serif left-[20px] top-[50%] transform-none rotate-[-90deg] origin-left text-[40px] text-[#121212] font-regular">
               <?php the_sub_field('title'); ?>
             </div>
 
@@ -150,27 +157,25 @@ $banner_video = get_field('banner_video');
         <div class="  relative z-10 w-full  text-white">
           <h1
             class="text-[32px] sm:text-[42px] md:text-[52px] font-normal mb-[20px] md:mb-[40px] font-instrument-serif leading-tight">
-            <span class="text-[#737378]">Story: From An </span>Idea To Movement
+            <?php the_field('story_title'); ?>
           </h1>
           <p
             class="  text-[12px] sm:text-[15px] md:text-[22px] leading-relaxed  font-instrument-sans px-[20px] sm:px-0">
-            It began with a simple frustration: buying without truly knowing. Our founder, once an indecisive shopper,
-            grew tired of guesswork. Inspired by the idea that real confidence comes from experience, they envisioned a
-            retail space where exploration wasn't just encouraged—it was built into the fabric of shopping itself. What
-            started as sketches on a whiteboard became a customer-first platform that gives people the freedom to
-            engage,
-            experiment, and then decide. Today, that vision lives on in every delivery, driven by a promise to make
-            shopping smarter, braver, and beautifully human.
+            <?php the_field('story_content'); ?>
           </p>
 
 
           <div class="flex flex-col sm:flex-row items-center justify-center gap-[8px]  mt-[32px]">
             <div class="w-[44px] h-[44px] overflow-hidden ">
-              <img src="<?php bloginfo('template_directory');?>/images/Frame 2693.png" alt="CEO Image" class="object-cover w-full h-full" />
+                <?php 
+$story_img = get_field('img'); 
+
+?>
+              <img src="<?php echo $story_img['url']; ?>" alt="CEO Image" class="object-cover w-full h-full" />
             </div>
             <div class="text-center sm:text-left font-instrument-sans font-medium sm:mt-0 ">
-              <h3 class=" text-[18px] font-semibold text-white">Mashum Mollah</h3>
-              <p class="text-[14px] text-[#6b6a6a]  font-bold">CEO & FOUNDER</p>
+              <h3 class=" text-[18px] font-semibold text-white"><?php the_field('name'); ?></h3>
+              <p class="text-[14px] text-[#6b6a6a]  font-bold"><?php the_field('designation'); ?></p>
             </div>
           </div>
         </div>

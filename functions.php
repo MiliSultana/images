@@ -38,3 +38,73 @@ function custom_enqueue_scripts() {
 add_action('wp_enqueue_scripts', 'custom_enqueue_scripts');
 
 ?>
+
+<?php
+// Enable widget support
+function custom_theme_widgets_init() {
+  register_sidebar( array(
+    'name'          =>'footer1',
+    'id'            => 'footer1',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          =>'logos',
+    'id'            => 'logos',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          =>'footer2',
+    'id'            => 'footer2',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          =>'footer3',
+    'id'            => 'footer3',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          =>'footer4',
+    'id'            => 'footer4',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+
+  register_sidebar( array(
+    'name'          =>'footer5',
+    'id'            => 'footer5',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+  
+
+   register_sidebar( array(
+    'name'          =>'footer_bottom',
+    'id'            => 'footer_bottom',
+    'before_widget' => '<div id="%1$s" class="widget %2$s ">',
+    'after_widget'  => '</div>',
+    'before_title'  => '<h3 class="widget-title ">',
+    'after_title'   => '</h3>',
+  ) );
+}
+add_action( 'widgets_init', 'custom_theme_widgets_init' );
+?>
