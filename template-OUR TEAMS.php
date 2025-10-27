@@ -12,8 +12,7 @@
             <div class="  w-full md:w-1/2 mb-10 mt-0 sm:mt-[20px] md:mb-0  text-center md:text-left">
                 <h1
                     class="text-[40px] md:text-[40px] md:leading-[40px] lg:text-[60px] font-instrument-serif font-normal lg:leading-[60px] xl:text-[60px] xl:leading-[60px] 2xl:text-[80px] 2xl:leading-[88px]  ">
-                    <span class="text-[#737378]">Leading</span> with Vision.<br />
-                    Driven by Integrity.
+                    <?php the_field('banner_title'); ?>
                 </h1>
 
             </div>
@@ -25,9 +24,8 @@
                 <!-- p -->
                 <div class="relative z-10">
                     <p class=" text-[18px] ml-0 2xl:ml-[142px] font-instrument-sans">
-                        Our leadership team propels the business forward with vision, integrity, and strategic
-                        focus—delivering innovation, market success, and long-term value across every initiative. </p>
-                </div>
+                        <?php the_field('banner_description'); ?>
+                    </div>
             </div>
 
         </div>
@@ -62,44 +60,45 @@
 
 
 <!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
+   <?php if( have_rows('img_peragraph') ): ?>
+          <?php while( have_rows('img_peragraph') ): the_row(); ?>
+<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="<?php the_sub_field('peragraph'); ?>">
     <!-- Name/Title container at top -->
     <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
+        <h3 class="text-[18px] text-[#121212]"><?php the_sub_field('name'); ?></h3>
+        <p class="text-[11px] text-[#737378]"><?php the_sub_field('designation'); ?></p>
 
         <!-- Close button -->
         <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
+        <?php 
+$cross_img = get_sub_field('cross_icon'); 
+
+?>    
+        <img src="<?php echo $cross_img['url']; ?>" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
         </button>
     </div>
 
     <!-- Image/Paragraph container -->
     <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/si.png" alt="Team Member" class="w-full h-auto z-10" />
+        <?php 
+$image = get_sub_field('image'); 
+
+?>  
+        <img src="<?php echo $image['url']; ?>" alt="Team Member" class="w-full h-[360px] z-10" />
     </div>
 
     <!-- Footer section -->
     <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
         <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
+            <h3 class="text-[18px] text-[#121212]"><?php the_sub_field('name'); ?></h3>
+            <p class="text-[11px] text-[#737378]"><?php the_sub_field('designation'); ?></p>
         </div>
         <div>
             <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
+            <?php 
+            $plus_img=get_sub_field('plus_icon') ;
+            ?>   
+            <img src="<?php echo $plus_img['url'];?>" alt="Add"
                     class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
             </button>
         </div>
@@ -109,254 +108,16 @@
 
 
 
-
-
-        <!-- Repeat -->
-        
-<!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
-    <!-- Name/Title container at top -->
-    <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-
-        <!-- Close button -->
-        <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
-        </button>
-    </div>
-
-    <!-- Image/Paragraph container -->
-    <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/si.png" alt="Team Member" class="w-full h-auto z-10" />
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
-        <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-        </div>
-        <div>
-            <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
-                    class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
-            </button>
-        </div>
-    </div>
-</div>
-
-
-
-
-
+ <?php endwhile; ?>
+      <?php endif; ?>
        
-<!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
-    <!-- Name/Title container at top -->
-    <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
 
-        <!-- Close button -->
-        <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
-        </button>
-    </div>
+      
 
-    <!-- Image/Paragraph container -->
-    <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/si.png" alt="Team Member" class="w-full h-auto z-10" />
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
-        <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-        </div>
-        <div>
-            <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
-                    class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
-            </button>
-        </div>
-    </div>
+      
 </div>
 
-
-
-
-
-     
-<!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
-    <!-- Name/Title container at top -->
-    <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-
-        <!-- Close button -->
-        <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
-        </button>
-    </div>
-
-    <!-- Image/Paragraph container -->
-    <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/si.png" alt="Team Member" class="w-full h-auto z-10" />
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
-        <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-        </div>
-        <div>
-            <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
-                    class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
-            </button>
-        </div>
-    </div>
-</div>
-
-
-
-
-
-
-
-
-<!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
-    <!-- Name/Title container at top -->
-    <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-
-        <!-- Close button -->
-        <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
-        </button>
-    </div>
-
-    <!-- Image/Paragraph container -->
-    <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/si.png" alt="Team Member" class="w-full h-auto z-10" />
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
-        <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-        </div>
-        <div>
-            <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
-                    class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
-            </button>
-        </div>
-    </div>
-</div>
-
-        
-<!-- Team Member Card -->
-<div class="profile-card bg-[#F5F3ED] text-white relative" data-description="Starting his career as an SEO specialist, Mashum quickly realized his potential and passion for
-                creating something
-                of his own. In 2018, he founded Viacon, a company that has rapidly grown under his leadership to
-                achieve a
-                remarkable milestone of becoming a one-million-dollar enterprise by 2022.
-                Mashum’s entrepreneurial acumen led to the creation and success of three distinguished brands:
-                RHN, Blog Management,
-                and Blogger Outreach. These brands have flourished under his strategic direction, establishing
-                themselves as significant
-                players in their respective domains. As the founder and visionary behind Viacon, Mashum’s
-                mission is to expand the
-                business on a global scale, ensuring long-term and sustainable growth while steering the
-                company’s voice and vision.">
-    <!-- Name/Title container at top -->
-    <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-        <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-
-        <!-- Close button -->
-        <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
-            <img src="<?php bloginfo('template_directory');?>/images/cross.png" alt="Close" class="w-[18px] h-[18px] p-[4px]" />
-        </button>
-    </div>
-
-    <!-- Image/Paragraph container -->
-    <div class="content-area relative">
-        <img src="<?php bloginfo('template_directory');?>/images/sir.png" alt="Team Member" class="w-full h-auto z-10" />
-    </div>
-
-    <!-- Footer section -->
-    <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
-        <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]">Mashum Mollah</h3>
-            <p class="text-[11px] text-[#737378]">CEO &amp; FOUNDER</p>
-        </div>
-        <div>
-            <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">
-                <img src="<?php bloginfo('template_directory');?>/images/Add.png" alt="Add"
-                    class="w-[20px] h-[20px] p-[3px] border-[1px] border-black" />
-            </button>
-        </div>
-    </div>
-</div>
-
-
+ 
 
 
 
