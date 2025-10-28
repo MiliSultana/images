@@ -9,7 +9,7 @@
       <div class="flex flex-wrap items-center h-auto md:h-auto   md:py-0  relative z-0">
         <!-- Background Image on Right -->
         <div class="hidden md:block absolute top-[-60px] right-[24%] w-1/2 h-full z-10">
-          <img src="images/Vector2.png" alt="Right side" class="w-full " />
+          <img src="<?php bloginfo('template_directory');?>/images/Vector2.png" alt="Right side" class="w-full " />
         </div>
 
         <!-- Blur Glow Effect -->
@@ -29,7 +29,7 @@
           <div class="z-10  w-full md:w-1/2  md:mb-0 lg:pr-[48px] xl:px-0 2xl:px-0 lg:mt-[50px] xl:mt-[50px] 2xl:mt-[95px] text-center md:text-left">
             <h1
               class="not-visited:lg:text-left text-[40px] md:text-[49px] md:leading-[60px] lg:text-[50px] xl:text-[70px] 2xl:text-[80px] font-instrument-serif font-normal lg:leading-[60px] xl:leading-[88px]">
-              Join the company <br> with the bold<span class="text-[#737378]"> new <br> vision.</span>
+              <?php the_field('banner_title'); ?>
             </h1>
 
           </div>
@@ -42,9 +42,7 @@
             <div class="relative z-10 lg:mt-[50px] xl:mt-[110px] 2xl:mt-[140px] mt-0 md:mt-[50px] items-center justify-center ">
               <p
                 class="px-[20px] md:px-0 md:ml-[111px] lg:ml-0 xl:ml-[80px] font-[400]  leading-[25.2px] tracking-[1px] md:text-left not-visited:lg:text-left 2xl:text-[18px] md:text-[14px]  lg:text-[15px] ml-0 font-instrument-sans">
-                At Sevora, we’re shaping the e-commerce industry. Join us to solve AI’s toughest
-                challenges, building systems that see, hear, and understand like humans—unlocking new
-                ways to communicate and create.
+                <?php the_field('banner_description'); ?>
 
 
 
@@ -67,26 +65,36 @@
 
   </section>
 
-  <section class="w-full max-w-[1440px] mx-auto overflow-hidden bg-[#121212]">
-    <div class="relative w-full pb-[100px]">
-      <!-- Add items-start to align top -->
-      <div class="flex items-start whitespace-nowrap w-max marquee-track gap-[40px]">
-        <!-- 1st image set -->
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2708.png" alt="Image 1" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2709.png" alt="Image 2" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2710.png" alt="Image 3" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2711.png" alt="Image 4" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2712.png" alt="Image 5" class="h-auto  object-contain flex-shrink-0" />
+<?php
+$marquee_images = get_field('marquee_images'); // Get the entire repeater as an array
+?>
 
-        <!-- 2nd image set -->
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2708.png" alt="Image 1" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2709.png" alt="Image 2" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2710.png" alt="Image 3" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2711.png" alt="Image 4" class="h-auto  object-contain flex-shrink-0" />
-        <img src="<?php bloginfo('template_directory');?>/images/Frame 2712.png" alt="Image 5" class="h-auto  object-contain flex-shrink-0" />
-      </div>
+<section class="w-full max-w-[1440px] mx-auto overflow-hidden bg-[#121212]">
+  <div class="relative w-full pb-[100px]">
+    <div class="flex items-start whitespace-nowrap w-max marquee-track gap-[40px]">
+      
+      <?php if ($marquee_images): ?>
+        <!-- First set -->
+        <?php foreach ($marquee_images as $item): 
+          $image = $item['image']; ?>
+          <img src="<?php echo esc_url($image['url']); ?>" 
+               alt="<?php echo esc_attr($image['alt']); ?>" 
+               class="h-auto object-contain flex-shrink-0" />
+        <?php endforeach; ?>
+
+        <!-- Duplicate set for infinite loop -->
+        <?php foreach ($marquee_images as $item): 
+          $image = $item['image']; ?>
+          <img src="<?php echo esc_url($image['url']); ?>" 
+               alt="<?php echo esc_attr($image['alt']); ?>" 
+               class="h-auto object-contain flex-shrink-0" />
+        <?php endforeach; ?>
+      <?php endif; ?>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
 
   <section class="w-full pb-0 md:pb-[100px]  bg-[#F5F3ED]">
