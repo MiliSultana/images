@@ -166,7 +166,7 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scrollbar/8.5.2/smooth-scrollbar.js"></script>
-      <script src="script.js"></script>
+      <script src="<?php bloginfo('template_directory');?>/script.js"></script>
 
 
     </div>
@@ -419,6 +419,6 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
 
 
   </section>
-   <script src="<?php bloginfo('template_directory');?>/script.js"></script>
+ 
 
   <?php get_footer(); ?>

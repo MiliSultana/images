@@ -16,6 +16,44 @@
 
 //step progress bar
 
+// Swiper initialization
+// Dynamically load Swiper JS and initialize after it loads
+document.addEventListener("DOMContentLoaded", function () {
+  // Ensure .mySwiper exists
+  const swiperEl = document.querySelector(".mySwiper");
+  if (!swiperEl) return;
+
+  // Initialize Swiper
+  const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 55,
+    loop: true,
+    breakpoints: {
+      0: { slidesPerView: 1, spaceBetween: 20 },
+      768: { slidesPerView: 2, spaceBetween: 30 },
+      1024: { slidesPerView: 4, spaceBetween: 55 },
+    },
+  });
+
+  // Custom navigation
+  const prev = document.getElementById("customPrev");
+  const next = document.getElementById("customNext");
+  if (prev && next) {
+    prev.addEventListener("click", () => swiper.slidePrev());
+    next.addEventListener("click", () => swiper.slideNext());
+  }
+
+  // Custom progress bar
+  function updateProgress() {
+    const totalSlides = swiper.slides.length - swiper.loopedSlides;
+    const progress = (swiper.realIndex / totalSlides) * 100;
+    const progressBar = document.getElementById("customProgress");
+    if (progressBar) progressBar.style.width = progress + "%";
+  }
+
+  swiper.on("slideChange", updateProgress);
+  updateProgress();
+});
 
 
 //for the image and peragraph of 2nd page..
@@ -111,6 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+// first page slider
 
 
 // catagory selection for the blog page..

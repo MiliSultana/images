@@ -266,46 +266,12 @@ $story_img = get_field('img');
 </div>
 
 <!-- Swiper JS -->
-<!-- Swiper JS -->
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-<script>
-  var swiper = new Swiper(".mySwiper", {
-    slidesPerView: 4,
-    spaceBetween: 55,
-    loop: true,
-    breakpoints: {
-      0: { slidesPerView: 1, spaceBetween: 20 },
-      768: { slidesPerView: 2, spaceBetween: 30 },
-      1024: { slidesPerView: 4, spaceBetween: 55 },
-    },
-  });
-
-  // Custom navigation
-  document.getElementById("customPrev").addEventListener("click", () => swiper.slidePrev());
-  document.getElementById("customNext").addEventListener("click", () => swiper.slideNext());
-
-  // Custom progress bar
-  function updateProgress() {
-    const totalSlides = swiper.slides.length - (swiper.loopedSlides ); // exclude loop duplicates
-    const progress = ((swiper.realIndex ) / totalSlides) * 100;
-    document.getElementById("customProgress").style.width = progress + "%";
-  }
-
-  swiper.on("slideChange", updateProgress);
-  updateProgress(); // initialize
-</script>
-
-
-
-        
-
-
-    
     </section>
   </div>
 
-
+  
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="<?php bloginfo('template_directory');?>/script.js"></script>
 
 
   <?php get_footer(); ?>
