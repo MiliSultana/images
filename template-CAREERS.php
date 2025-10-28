@@ -197,71 +197,34 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
         <div class="max-w-[1240px] mx-auto text-center mb-[40px] px-4 md:px-0">
           <h2
             class="text-[32px] font-instrument-serif md:text-[52px]  text-center mx-auto text-white font-medium  mb-[40px] ">
-            Our<span class="text-[#737378] font-regular"> Values</span>
+           <?php the_field('our_values_title'); ?>
           </h2>
 
         </div>
 
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-[40px] px-[20px] sm:px-0">
           <!-- Card 1 -->
+             <?php if( have_rows('our_values') ): ?>
+          <?php while( have_rows('our_values') ): the_row(); ?>
           <div
             class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
             <div class="p-[24px] md:p-[32px]">
               <div class="flex items-center gap-[12px] mb-[16px]">
                 <img src="<?php bloginfo('template_directory');?>/images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
-                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">IMPATIENCE</h3>
+                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]"> <?php the_sub_field('title'); ?></h3>
               </div>
               <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
-                The Future Won’t Get Here Fast Enough Unless We Force It. We Value Speed, Intensity, And Bias Towards
-                Action.
+               <?php the_sub_field('description'); ?>
               </p>
             </div>
           </div>
+ <?php endwhile; ?>
+      <?php endif; ?>
+       
 
+      
           <!-- Card 2 -->
-          <div
-            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
-            <div class="p-[24px] md:p-[32px]">
-              <div class="flex items-center gap-[12px] mb-[16px]">
-                <img src="<?php bloginfo('template_directory');?>/images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
-                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">COURAGE</h3>
-              </div>
-              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
-                Doing Big Things Is Not For The Faint-Hearted! We’re Willing To Be Decisive And Take Risks—Inertia Is
-                The Enemy.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 3 -->
-          <div
-            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424] ">
-            <div class="p-[24px] md:p-[32px]">
-              <div class="flex items-center gap-[12px] mb-[16px]">
-                <img src="<?php bloginfo('template_directory');?>/images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
-                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">EXCELLENCE</h3>
-              </div>
-              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
-                Our Standards For Each Other Are “Insanely Great”. We Care Deeply About Our Craft, And Are Unapologetic
-                About Demanding Great.
-              </p>
-            </div>
-          </div>
-
-          <!-- Card 4 -->
-          <div
-            class="bg-[#171717] opacity-[90%] w-full md:w-auto h-auto md:h-auto shadow   border-[1px] border-[#242424]">
-            <div class="p-[24px] md:p-[32px]">
-              <div class="flex items-center gap-[12px] mb-[16px]">
-                <img src="<?php bloginfo('template_directory');?>/images/square.png" alt="rectangle" class="w-[12px] h-[12px] object-contain" />
-                <h3 class="font-medium font-instrument-sans text-[18px] tracking-[2px]">KEEP IT LEAN</h3>
-              </div>
-              <p class="text-[16px] font-regular font-instrument-sans leading-[24px] text-[#DBDBDB] ml-[23px]">
-                We’re Lean, Scrappy, And Prioritize Results Over Process—We’re Default Suspicious Of Things That Look
-                Like BS.
-              </p>
-            </div>
-          </div>
+        
         </div>
       </section>
     </section>
@@ -273,72 +236,41 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
     <div class="container mx-auto  text-center mb-0 md:mb-[40px]  md:px-0">
       <h2
         class="text-[32px] font-instrument-serif md:text-[52px]  text-center mx-auto text-[#121212] font-medium  ">
-        Our<span class="text-[#737378] font-regular"> Perks & Benefits</span>
+         <?php the_field('our_perks_title'); ?>
       </h2>
 
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 sm:gap-0 md:gap-[40px] container mx-auto sm:px-[50px] md:px-[50px] lg:px-[50px] xl:px-[100px] 2xl:px-[260px] ">
       <!-- Card 1 -->
+         <?php if( have_rows('our_perks') ): ?>
+          <?php while( have_rows('our_perks') ): the_row(); ?>
       <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
         <div class="p-[24px] ">
           <div class="flex flex-col  items-start gap-[12px] mb-[16px]">
-            <img src="<?php bloginfo('template_directory');?>/images/CurrencyInr.png" alt="rectangle"
+
+           <?php 
+            $image_icon=get_sub_field('image') ;
+            ?>
+
+            <img src="<?php echo $image_icon['url'];?>" alt="rectangle"
               class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5]  object-contain" />
-            <h3 class="font-medium font-instrument-sans text-[24px] ">Competitive compensation</h3>
+            <h3 class="font-medium font-instrument-sans text-[24px] "><?php the_sub_field('title'); ?></h3>
           </div>
           <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
-            Getting paid a good salary certainly doesn’t hurt and it definitely helps you live a far more fulfilling and
-            impactful life. </p>
+           <?php the_sub_field('description'); ?> </p>
         </div>
       </div>
+ <?php endwhile; ?>
+      <?php endif; ?>
 
       <!-- Card 2 -->
-      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
-        <div class="p-[24px] ">
-          <div class="flex flex-col  items-start gap-[12px] mb-[16px] ">
-            <img src="<?php bloginfo('template_directory');?>/images/MapPin.png" alt="rectangle"
-              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5]  object-contain" />
-            <h3 class="font-medium font-instrument-sans text-[24px] ">Flexible working</h3>
-          </div>
-          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
-            Doing Big Things Is Not For The Faint-Hearted! We’re Willing To Be Decisive And Take Risks—Inertia Is The
-            Enemy.
-          </p>
-        </div>
-      </div>
-
+     
       <!-- Card 3 -->
-      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto ">
-        <div class="p-[24px] ">
-          <div class="flex flex-col  items-start gap-[12px] mb-[16px] ">
-            <img src="<?php bloginfo('template_directory');?>/images/Monitor.png" alt="rectangle"
-              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5] object-contain" />
-            <h3 class="font-medium font-instrument-sans text-[24px] ">Startup equipment</h3>
-          </div>
-          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
-            Our Standards For Each Other Are “Insanely Great”. We Care Deeply About Our Craft, And Are Unapologetic
-            About Demanding Great.
-          </p>
-        </div>
-      </div>
+      
 
       <!-- Card 4 -->
-      <div class="bg-[#F5F3ED] opacity-[90%] w-full md:w-auto h-auto md:h-auto">
-        <div class="p-[24px] ">
-          <div class="flex flex-col items-start gap-[12px] mb-[16px] ">
-            <img src="<?php bloginfo('template_directory');?>/images/Heartbeat.png" alt="rectangle"
-              class="w-[48px] h-[48px] p-[8px] bg-[#F0EEE5] object-contain" />
-            <h3 class="font-medium font-instrument-sans text-[24px] tracking-[2px]">
-              Global Medical Insurance
-            </h3>
-          </div>
-          <p class="text-[16px] font-regular leading-[24px] text-[#424245] ">
-            We’re Lean, Scrappy, And Prioritize Results Over Process—We’re Default Suspicious Of Things That Look Like
-            BS.
-          </p>
-        </div>
-      </div>
+     
 
     </div>
   </section>
