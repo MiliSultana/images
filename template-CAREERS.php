@@ -280,44 +280,62 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
     <div class="container mx-auto  2xl:px-[48px]">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pb-[5px] auto-rows-auto  ">
         <!-- Image 1 -->
-        <div class="relative group overflow-hidden w-auto h-[284px] p-4 sm:p-0 md:p-0">
-          <img src="<?php bloginfo('template_directory');?>/images/gellaryPic1.png" alt="Image 1"
-            class="object-cover w-full h-full  transition-transform duration-300 group-hover:scale-110" />
+        <!-- Image Slider (First Box Only) -->
+<div class="relative group overflow-hidden w-auto h-[284px] p-4 sm:p-0 md:p-0">
+  <!-- Slider Container -->
+  <div id="firstBoxSlider" class="w-full h-full relative">
+    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic1.png"
+      alt="Image 1"
+      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-100 transition-opacity duration-700" />
+    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic2.png"
+      alt="Image 1b"
+      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
+    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic3.png"
+      alt="Image 1c"
+      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
+  </div>
 
-          <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
-            <div>
-              <h2 class="text-[#DDDDDD] text-[18px] font-medium  font-instrument-sans tracking-[0.25px]">
-                Akash Sharma
-              </h2>
-            </div>
+  <!-- Overlay Content -->
+  <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
+    <h2 class="text-[#DDDDDD] text-[18px] font-medium font-instrument-sans tracking-[0.25px]">
+      Akash Sharma
+    </h2>
+    <p class="text-[#DBDBDB] text-[11px] font-medium font-instrument-sans tracking-[1.5px]">
+      DESIGNER
+    </p>
+  </div>
 
-            <div>
-              <p class="text-[#DBDBDB] text-[11px] font-medium  font-instrument-sans  tracking-[1.5px] ">DESIGNER</p>
-            </div>
+  <!-- Play Button -->
+  <div class="absolute inset-0 left-[85%] top-3/4">
+    <img src="<?php bloginfo('template_directory'); ?>/images/playbutton.png" alt="">
+  </div>
 
-          </div>
+  <!-- Right Side Dots -->
+  <div class="absolute inset-0 right-4 top-[43%] flex flex-col ml-[20px]">
+    <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
+      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleFullWhite.png" alt="Box 1" />
+    </div>
+    <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
+      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleHalfWhite.png" alt="Box 2" />
+    </div>
+    <div class="overflow-hidden h-2 w-2 sm:h-[8px] sm:w-[8px]">
+      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleHalfWhite.png" alt="Box 3" />
+    </div>
+  </div>
+</div>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll("#firstBoxSlider .slider-image");
+    let currentIndex = 0;
 
-          <div class="absolute inset-0  left-[85%] top-3/4">
-            <div>
-              <img src="<?php bloginfo('template_directory');?>/images/playbutton.png" alt="">
-            </div>
-          </div>
+    setInterval(() => {
+      images[currentIndex].style.opacity = "0"; // hide current
+      currentIndex = (currentIndex + 1) % images.length;
+      images[currentIndex].style.opacity = "1"; // show next
+    }, 3000); // 3 seconds per slide
+  });
+</script>
 
-          <div class="absolute inset-0 right-4 top-[43%]  flex flex-col ml-[20px]">
-            <!-- Box 1 -->
-            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px] ">
-              <img src="<?php bloginfo('template_directory');?>/images/RectangleFullWhite.png" alt="Box 1" class="w-full h-full object-cover" />
-            </div>
-            <!-- Box 2 -->
-            <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
-              <img src="<?php bloginfo('template_directory');?>/images/RectangleHalfWhite.png" alt="Box 2" class="w-full h-full object-cover" />
-            </div>
-            <!-- Box 3 -->
-            <div class="overflow-hidden h-2 w-2 sm:h-[8px] sm:w-[8px]">
-              <img src="<?php bloginfo('template_directory');?>/images/RectangleHalfWhite.png" alt="Box 3" class="w-full h-full object-cover" />
-            </div>
-          </div>
-        </div>
 
         <!-- Image 2 -->
         <div class="overflow-hidden p-4 sm:p-0 md:p-0">
