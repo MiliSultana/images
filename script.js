@@ -201,3 +201,31 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".myBoxSwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        type: "custom",
+        renderCustom: function (swiper, current, total) {
+          let boxes = "";
+          for (let i = 1; i <= total; i++) {
+            boxes += `<span class="custom-box ${i === current ? "active" : ""}"> </span>`;
+          }
+          return boxes;
+        },
+      },
+    });
+  } else {
+    console.error("⚠️ Swiper not loaded. Check your script include.");
+  }
+});

@@ -65,8 +65,8 @@
 <div class="profile-card bg-[#F5F3ED] text-white relative" data-description="<?php the_sub_field('peragraph'); ?>">
     <!-- Name/Title container at top -->
     <div class="name-title hidden px-[16px] pt-[16px] font-instrument-sans font-medium relative">
-        <h3 class="text-[18px] text-[#121212]"><?php the_sub_field('name'); ?></h3>
-        <p class="text-[11px] text-[#737378]"><?php the_sub_field('designation'); ?></p>
+        <h3 class="text-[18px] text-[#121212] uppercase"><?php the_sub_field('name'); ?></h3>
+        <p class="text-[11px] text-[#737378] uppercase"><?php the_sub_field('designation'); ?></p>
 
         <!-- Close button -->
         <button class="close-btn hidden absolute top-[16px] right-[16px] border-[1px] border-black bg-[#F5F3ED]">
@@ -84,14 +84,14 @@ $cross_img = get_sub_field('cross_icon');
 $image = get_sub_field('image'); 
 
 ?>  
-        <img src="<?php echo $image['url']; ?>" alt="Team Member" class="w-full h-[360px] z-10" />
+        <img src="<?php echo $image['url']; ?>" alt="Team Member" class="w-[360px] h-[360px] z-10" />
     </div>
 
     <!-- Footer section -->
     <div class="footer-section flex justify-between items-center py-[19px] px-[16px] font-medium">
         <div class="font-instrument-sans font-medium w-[328px] h-[36px]">
-            <h3 class="text-[18px] text-[#121212]"><?php the_sub_field('name'); ?></h3>
-            <p class="text-[11px] text-[#737378]"><?php the_sub_field('designation'); ?></p>
+            <h3 class="text-[18px] text-[#121212] uppercase"><?php the_sub_field('name'); ?></h3>
+            <p class="text-[11px] text-[#737378] uppercase"><?php the_sub_field('designation'); ?></p>
         </div>
         <div>
             <button class="toggle-btn bg-[#F5F3ED] border border-[#F5F3ED] hover:bg-[#F5F3ED] transition">

@@ -281,60 +281,88 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 sm:pb-[5px] auto-rows-auto  ">
         <!-- Image 1 -->
         <!-- Image Slider (First Box Only) -->
+<!-- Include Swiper CSS -->
+
+
 <div class="relative group overflow-hidden w-auto h-[284px] p-4 sm:p-0 md:p-0">
+
   <!-- Slider Container -->
-  <div id="firstBoxSlider" class="w-full h-full relative">
-    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic1.png"
-      alt="Image 1"
-      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-100 transition-opacity duration-700" />
-    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic2.png"
-      alt="Image 1b"
-      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
-    <img src="<?php bloginfo('template_directory'); ?>/images/gellaryPic3.png"
-      alt="Image 1c"
-      class="slider-image object-cover w-full h-full absolute top-0 left-0 opacity-0 transition-opacity duration-700" />
-  </div>
+  <div class="swiper myBoxSwiper w-full h-full relative">
+    <div class="swiper-wrapper">
 
-  <!-- Overlay Content -->
-  <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
-    <h2 class="text-[#DDDDDD] text-[18px] font-medium font-instrument-sans tracking-[0.25px]">
-      Akash Sharma
-    </h2>
-    <p class="text-[#DBDBDB] text-[11px] font-medium font-instrument-sans tracking-[1.5px]">
-      DESIGNER
-    </p>
-  </div>
+      <!-- Slide 1 -->
+      <div class="swiper-slide relative">
+        <img
+          src="<?php bloginfo('template_directory'); ?>/images/gellaryPic1.png"
+          alt="Image 1"
+          class="object-cover w-full h-full absolute top-0 left-0"
+        />
+        <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
+          <h2 class="text-[#DDDDDD] text-[18px] font-medium font-instrument-sans tracking-[0.25px]">
+            Akash Sharma
+          </h2>
+          <p class="text-[#DBDBDB] text-[11px] font-medium font-instrument-sans tracking-[1.5px] uppercase">
+            Designer
+          </p>
+        </div>
+        <div class="absolute inset-0 left-[85%] top-3/4">
+          <img src="<?php bloginfo('template_directory'); ?>/images/playbutton.png" alt="">
+        </div>
+      </div>
 
-  <!-- Play Button -->
-  <div class="absolute inset-0 left-[85%] top-3/4">
-    <img src="<?php bloginfo('template_directory'); ?>/images/playbutton.png" alt="">
-  </div>
+      <!-- Slide 2 -->
+      <div class="swiper-slide relative">
+        <img
+          src="<?php bloginfo('template_directory'); ?>/images/gellaryPic2.png"
+          alt="Image 2"
+          class="object-cover w-full h-full absolute top-0 left-0"
+        />
+        <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
+          <h2 class="text-[#DDDDDD] text-[18px] font-medium font-instrument-sans tracking-[0.25px]">
+            Priya Mehta
+          </h2>
+          <p class="text-[#DBDBDB] text-[11px] font-medium font-instrument-sans tracking-[1.5px] uppercase">
+            Photographer
+          </p>
+        </div>
+        <div class="absolute inset-0 left-[85%] top-3/4">
+          <img src="<?php bloginfo('template_directory'); ?>/images/playbutton.png" alt="">
+        </div>
+      </div>
 
-  <!-- Right Side Dots -->
-  <div class="absolute inset-0 right-4 top-[43%] flex flex-col ml-[20px]">
-    <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
-      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleFullWhite.png" alt="Box 1" />
-    </div>
-    <div class="overflow-hidden mb-2 h-2 w-2 sm:h-[8px] sm:w-[8px]">
-      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleHalfWhite.png" alt="Box 2" />
-    </div>
-    <div class="overflow-hidden h-2 w-2 sm:h-[8px] sm:w-[8px]">
-      <img src="<?php bloginfo('template_directory'); ?>/images/RectangleHalfWhite.png" alt="Box 3" />
-    </div>
+      <!-- Slide 3 -->
+      <div class="swiper-slide relative">
+        <img
+          src="<?php bloginfo('template_directory'); ?>/images/gellaryPic3.png"
+          alt="Image 3"
+          class="object-cover w-full h-full absolute top-0 left-0"
+        />
+        <div class="absolute inset-0 w-[136px] h-[39px] items-center ml-[40px] top-3/4">
+          <h2 class="text-[#DDDDDD] text-[18px] font-medium font-instrument-sans tracking-[0.25px]">
+            Rohan Patel
+          </h2>
+          <p class="text-[#DBDBDB] text-[11px] font-medium font-instrument-sans tracking-[1.5px] uppercase">
+            Developer
+          </p>
+        </div>
+        <div class="absolute inset-0 left-[85%] top-3/4">
+          <img src="<?php bloginfo('template_directory'); ?>/images/playbutton.png" alt="">
+        </div>
+      </div>
+
+  
+
+    <!-- Pagination (left aligned) -->
+    <div class="swiper-pagination !left-[40px] !bottom-[15px] !w-auto !text-left"></div>
   </div>
 </div>
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const images = document.querySelectorAll("#firstBoxSlider .slider-image");
-    let currentIndex = 0;
 
-    setInterval(() => {
-      images[currentIndex].style.opacity = "0"; // hide current
-      currentIndex = (currentIndex + 1) % images.length;
-      images[currentIndex].style.opacity = "1"; // show next
-    }, 3000); // 3 seconds per slide
-  });
-</script>
+
+
+
+
+</div>
+
 
 
         <!-- Image 2 -->
@@ -437,6 +465,9 @@ $marquee_images = get_field('marquee_images'); // Get the entire repeater as an 
 
 
   </section>
- 
+  <!-- Include Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="<?php bloginfo('template_directory');?>/script.js"></script>
 
   <?php get_footer(); ?>

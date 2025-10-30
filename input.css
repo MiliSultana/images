@@ -157,4 +157,31 @@ body, html {
 
 
 
+/* Container */
+.swiper-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
 
+/* Box shape */
+.custom-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9px;
+  height: 9px;
+  font-size: 13px;
+  color: #333;
+  background-color: #e1e1e1;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Active box */
+.custom-box.active {
+  background-color: #000;
+  color: #fff;
+}
